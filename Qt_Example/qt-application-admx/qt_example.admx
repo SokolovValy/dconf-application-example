@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2019 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   revision="1.1" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="example" namespace="ALTLinux.Policies.Example" />
+    <using prefix="language" namespace="ALTLinux.Policies.Qt" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+
+  <supportedOn>
+    <definitions>
+      <!--ALT Sisyphus-->
+      <definition name="SUPPORTED_Sisyphus" displayName="$(string.SUPPORTED_Sisyphus)">
+        <or>
+          <reference ref="products:Branch"/>
+        </or>
+      </definition>
+  
+    </definitions>
+  </supportedOn>
+
+
+  <categories>
+    <category name="Qt_Application" displayName="$(string.Qt_Application)" explainText="$(string.Qt_Application_Help)" />
+  </categories>
+
+
+  <policies>
+    <policy name="OrgExampleCounterQt" class="Machine"
+        displayName="$(string.org-example-qt-counter)"
+        explainText="$(string.org-example-qt-counter_help)"
+        key="org/altlinux/example/qt_application"
+        presentation="$(presentation.OrgExampleCounterQt-pr)" >
+      <parentCategory ref="system:Qt_Application" />
+      <supportedOn ref="system:SUPPORTED_Sisyphus" />
+      <elements>
+        <decimal id="qt-counter_setter" valueName="count" minValue="0" maxValue="10000" />
+        <text id="qt-version_setter" valueName="version"/>
+      </elements>
+    </policy>
+  </policies>
+
+</policyDefinitions>

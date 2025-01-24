@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2022 BaseALT, Ltd.  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="1.0" schemaVersion="1.0">
+  <displayName>Определения списка настроек рабочего окружения операционной системы «Альт»</displayName>
+  <description>Этот файл содержит определения настроек рабочего окружения в операционной системе «Альт».</description>
+  <resources>
+    <stringTable>
+
+      <string id="SUPPORTED_Sisyphus">ALT Сизиф</string>
+      
+      <string id="Vala_Application">Приложение на Vala</string>
+      <string id="Vala_Application_Help">Настройки для приложения «Счётчик» на Vala</string>
+
+
+      <string id="org-example-vala-counter">Значение счётчика</string>
+      <string id="org-example-vala-counter_help">Политика позволяет установить значение счётчика приложения Vala.
+
+Опция «Блокировать» — (доступна только для машинной политики) запрещает изменение данной настройки пользователем. Блокировка политики делает её приоритетнее аналогичной политики для пользователя.
+
+      </string>
+
+      <string id="org-example-vala-counter-size">Размеры окна приложения</string>
+      <string id="org-example-vala-counter-size_help">Политика позволяет установить размеры (в пикселях) окна приложения.
+
+Опция «Блокировать» — (доступна только для машинной политики) запрещает изменение данной настройки пользователем. Блокировка политики делает её приоритетнее аналогичной политики для пользователя.
+
+      </string>
+    
+    </stringTable>
+
+    <presentationTable>
+      <presentation id="OrgExampleCounterVala-pr">
+        <decimalTextBox refId="vala-counter_setter" defaultValue="0">Значение счётчика:</decimalTextBox>
+        <checkBox refId="vala-counter_blocker">Блокировать</checkBox>
+      </presentation>
+      <presentation id="OrgExampleCounterValaSize-pr">
+        <decimalTextBox refId="vala-width_setter" defaultValue="300">Ширина окна:</decimalTextBox>
+        <decimalTextBox refId="vala-height_setter" defaultValue="300">Высота окна:</decimalTextBox>
+        <checkBox refId="vala-width_blocker">Блокировать настройку ширины</checkBox>
+        <checkBox refId="vala-height_blocker">Блокировать настройку высоты</checkBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

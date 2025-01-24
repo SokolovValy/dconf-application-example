@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2019 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   revision="1.1" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="example" namespace="ALTLinux.Policies.Example" />
+    <using prefix="language" namespace="ALTLinux.Policies.Vala" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+
+  <supportedOn>
+    <definitions>
+      <!--ALT Sisyphus-->
+      <definition name="SUPPORTED_Sisyphus" displayName="$(string.SUPPORTED_Sisyphus)">
+        <or>
+          <reference ref="products:Branch"/>
+        </or>
+      </definition>
+  
+    </definitions>
+  </supportedOn>
+
+
+  <categories>
+    <category name="Vala_Application" displayName="$(string.Vala_Application)" explainText="$(string.Vala_Application_Help)" />
+  </categories>
+
+
+  <policies>
+    <policy name="OrgExampleCounterVala" class="Machine"
+        displayName="$(string.org-example-vala-counter)"
+        explainText="$(string.org-example-vala-counter_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgExampleCounterVala-pr)" >
+      <parentCategory ref="system:Vala_Application" />
+      <supportedOn ref="system:SUPPORTED_Sisyphus" />
+      <elements>
+        <decimal id="vala-counter_setter" valueName="org.example.counter.vala.counter-value" minValue="0" maxValue="10000" />
+        <boolean id="vala-counter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.example.counter.vala.counter-value">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgExampleCounterValaSize" class="Machine"
+        displayName="$(string.org-example-vala-counter-size)"
+        explainText="$(string.org-example-vala-counter-size_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgExampleCounterValaSize-pr)" >
+      <parentCategory ref="system:Vala_Application" />
+      <supportedOn ref="system:SUPPORTED_Sisyphus" />
+      <elements>
+        <decimal id="vala-width_setter" valueName="org.example.counter.vala.window-width" minValue="0" maxValue="800" />
+        <decimal id="vala-height_setter" valueName="org.example.counter.vala.window-height" minValue="0" maxValue="800" />
+        <boolean id="vala-width_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.example.counter.vala.window-width">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="vala-height_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.example.counter.vala.window-height">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+  </policies>
+
+</policyDefinitions>

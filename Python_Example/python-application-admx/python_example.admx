@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2019 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   revision="1.1" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="example" namespace="ALTLinux.Policies.Example" />
+    <using prefix="language" namespace="ALTLinux.Policies.Python" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+
+  <supportedOn>
+    <definitions>
+      <!--ALT Sisyphus-->
+      <definition name="SUPPORTED_Sisyphus" displayName="$(string.SUPPORTED_Sisyphus)">
+        <or>
+          <reference ref="products:Branch"/>
+        </or>
+      </definition>
+  
+    </definitions>
+  </supportedOn>
+
+
+  <categories>
+    <category name="Python_Application" displayName="$(string.Python_Application)" explainText="$(string.Python_Application_Help)" />
+  </categories>
+
+
+  <policies>
+    <policy name="OrgExampleCounterPython" class="Machine"
+        displayName="$(string.org-example-python-counter)"
+        explainText="$(string.org-example-python-counter_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgExampleCounterPython-pr)" >
+      <parentCategory ref="system:Python_Application" />
+      <supportedOn ref="system:SUPPORTED_Sisyphus" />
+      <elements>
+        <decimal id="python-counter_setter" valueName="org.example.counter.python.counter-value" minValue="0" maxValue="10000" />
+        <boolean id="python-counter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.example.counter.python.counter-value">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgExampleCounterPythonSize" class="Machine"
+        displayName="$(string.org-example-python-counter-size)"
+        explainText="$(string.org-example-python-counter-size_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgExampleCounterPythonSize-pr)" >
+      <parentCategory ref="system:Python_Application" />
+      <supportedOn ref="system:SUPPORTED_Sisyphus" />
+      <elements>
+        <decimal id="python-width_setter" valueName="org.example.counter.python.window-width" minValue="0" maxValue="800" />
+        <decimal id="python-height_setter" valueName="org.example.counter.python.window-height" minValue="0" maxValue="800" />
+        <boolean id="python-width_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.example.counter.python.window-width">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="python-height_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.example.counter.python.window-height">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgExampleCounterPythonPozition" class="Machine"
+        displayName="$(string.org-example-python-counter-pozition)"
+        explainText="$(string.org-example-python-counter-pozition_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgExampleCounterPythonPozition-pr)" >
+      <parentCategory ref="system:Python_Application" />
+      <supportedOn ref="system:SUPPORTED_Sisyphus" />
+      <elements>
+        <decimal id="python-window-x_setter" valueName="org.example.counter.python.window-x" minValue="0" maxValue="1920" />
+        <decimal id="python-window-y_setter" valueName="org.example.counter.python.window-y" minValue="0" maxValue="1080" />
+        <boolean id="python-window-x_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.example.counter.python.window-x">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="python-window-y_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.example.counter.python.window-y">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+  </policies>
+
+</policyDefinitions>

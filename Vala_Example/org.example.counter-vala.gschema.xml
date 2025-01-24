@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="vala-counter">
+  <schema id="org.example.counter.vala" path="/org/example/counter/vala/">
+    <key name="window-width" type="i">
+      <default>300</default>
+      <summary>window-width</summary>
+    </key>
+    <key name="window-height" type="i">
+      <default>300</default>
+      <summary>window-height</summary>
+    </key>
+    <key name="counter-value" type="i">
+      <default>25</default>
+      <summary>counter-value</summary>
+    </key>
+  </schema>
+</schemalist>

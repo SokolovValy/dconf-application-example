@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2022 BaseALT, Ltd.  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="1.0" schemaVersion="1.0">
+  <displayName>Определения списка настроек рабочего окружения операционной системы «Альт»</displayName>
+  <description>Этот файл содержит определения настроек рабочего окружения в операционной системе «Альт».</description>
+  <resources>
+    <stringTable>
+
+      <string id="SUPPORTED_Sisyphus">ALT Сизиф</string>
+      
+      <string id="Qt_Application">Приложение на Qt</string>
+      <string id="Qt_Application_Help">Настройки для приложения «Счётчик» на Qt</string>
+
+
+      <string id="org-example-qt-counter">Настройки приложения</string>
+      <string id="org-example-qt-counter_help">Политика позволяет установить значение счётчика и версии приложения на Qt.
+
+      </string>
+
+    
+    </stringTable>
+
+    <presentationTable>
+      <presentation id="OrgExampleCounterQt-pr">
+        <decimalTextBox refId="qt-counter_setter" defaultValue="0">Значение счётчика:</decimalTextBox>
+        <textBox refId="qt-version_setter">
+          <label>Версия:</label>
+        </textBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2022 BaseALT, Ltd.  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="1.0" schemaVersion="1.0">
+  <displayName>Определения списка настроек рабочего окружения операционной системы «Альт»</displayName>
+  <description>Этот файл содержит определения настроек рабочего окружения в операционной системе «Альт».</description>
+  <resources>
+    <stringTable>
+
+      <string id="SUPPORTED_Sisyphus">ALT Сизиф</string>
+      
+      <string id="Python_Application">Приложение на Python</string>
+      <string id="Python_Application_Help">Настройки для приложения «Счётчик» на Python</string>
+
+
+      <string id="org-example-python-counter">Значение счётчика</string>
+      <string id="org-example-python-counter_help">Политика позволяет установить значение счётчика приложения Python.
+
+Опция «Блокировать» — (доступна только для машинной политики) запрещает изменение данной настройки пользователем. Блокировка политики делает её приоритетнее аналогичной политики для пользователя.
+
+      </string>
+
+      <string id="org-example-python-counter-size">Размеры окна приложения</string>
+      <string id="org-example-python-counter-size_help">Политика позволяет установить размеры (в пикселях) окна приложения.
+
+Опция «Блокировать» — (доступна только для машинной политики) запрещает изменение данной настройки пользователем. Блокировка политики делает её приоритетнее аналогичной политики для пользователя.
+
+      </string>
+
+      <string id="org-example-python-counter-pozition">Расположение окна приложения</string>
+      <string id="org-example-python-counter-pozition_help">Политика позволяет установить расположение окна (в пикселях) по горизонтали и вертикали.
+
+Опция «Блокировать» — (доступна только для машинной политики) запрещает изменение данной настройки пользователем. Блокировка политики делает её приоритетнее аналогичной политики для пользователя.
+
+      </string>
+    
+    </stringTable>
+
+    <presentationTable>
+      <presentation id="OrgExampleCounterPython-pr">
+        <decimalTextBox refId="python-counter_setter" defaultValue="0">Значение счётчика:</decimalTextBox>
+        <checkBox refId="python-counter_blocker">Блокировать</checkBox>
+      </presentation>
+      <presentation id="OrgExampleCounterPythonSize-pr">
+        <decimalTextBox refId="python-width_setter" defaultValue="300">Ширина окна:</decimalTextBox>
+        <decimalTextBox refId="python-height_setter" defaultValue="300">Высота окна:</decimalTextBox>
+        <checkBox refId="python-width_blocker">Блокировать настройку ширины</checkBox>
+        <checkBox refId="python-height_blocker">Блокировать настройку высоты</checkBox>
+      </presentation>
+      <presentation id="OrgExampleCounterPythonPozition-pr">
+        <decimalTextBox refId="python-window-x_setter" defaultValue="960">Положение по горизонтали:</decimalTextBox>
+        <decimalTextBox refId="python-window-y_setter" defaultValue="540">Положение по вертикали:</decimalTextBox>
+        <checkBox refId="python-window-x_blocker">Блокировать настройку положения по горизонтали</checkBox>
+        <checkBox refId="python-window-y_blocker">Блокировать настройку положения по вертикали</checkBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>
