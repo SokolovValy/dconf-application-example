@@ -9,11 +9,11 @@ public class CounterApp : Gtk.Application {
 
     public CounterApp() {
         // Инициализация приложения
-        Object(application_id: "org.example.counter.python",
+        Object(application_id: "org.example.counter.vala",
                flags: ApplicationFlags.FLAGS_NONE);
 
         // Загрузка GSettings
-        settings = new GLib.Settings("org.example.counter.python");
+        settings = new GLib.Settings("org.example.counter.vala");
 
         this.activate.connect(() => {
 
