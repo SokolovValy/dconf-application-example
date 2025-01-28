@@ -23,9 +23,11 @@
     <presentationTable>
       <presentation id="OrgExampleCounterQt-pr">
         <decimalTextBox refId="qt-counter_setter" defaultValue="0">Значение счётчика:</decimalTextBox>
+        <checkBox refId="qt-counter_blocker">Блокировать настройку значения счётчика</checkBox>
         <textBox refId="qt-version_setter">
           <label>Версия:</label>
         </textBox>
+        <checkBox refId="qt-version_blocker">Блокировать настройку версии</checkBox>
       </presentation>
     </presentationTable>
   </resources>

@@ -36,7 +36,23 @@
       <supportedOn ref="system:SUPPORTED_Sisyphus" />
       <elements>
         <decimal id="qt-counter_setter" valueName="count" minValue="0" maxValue="10000" />
+        <boolean id="qt-counter_blocker" key="lock/org/altlinux/example/qt_application" valueName="count">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
         <text id="qt-version_setter" valueName="version"/>
+        <boolean id="qt-version_blocker" key="lock/org/altlinux/example/qt_application" valueName="version">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
       </elements>
     </policy>
   </policies>
