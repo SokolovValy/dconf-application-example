@@ -27,7 +27,7 @@
 
 
   <policies>
-    <policy name="OrgExampleCounterQt" class="Machine"
+    <policy name="OrgExampleCounterQt" class="Both"
         displayName="$(string.org-example-qt-counter)"
         explainText="$(string.org-example-qt-counter_help)"
         key="org/altlinux/example/qt_application"
