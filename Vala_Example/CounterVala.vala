@@ -30,6 +30,20 @@ public class CounterApp : Gtk.Application {
                 window.set_default_size(width, height);
             }
 
+            // Загрузка css стилей
+            var css_provider = new Gtk.CssProvider ();
+            try {
+                css_provider.load_from_path ("style.css");
+                Gtk.StyleContext.add_provider_for_display (
+                    Gdk.Display.get_default(),
+                    css_provider,
+                    Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+                );
+            } catch (Error e) {
+                stderr.printf ("Failed to load CSS: %s\n", e.message);
+            }
+
+
             // Загрузка значения счётчика
             counter = settings.get_int("counter-value");
 
@@ -42,7 +56,7 @@ public class CounterApp : Gtk.Application {
             window.set_child(vbox);
 
             label = new Gtk.Label(counter.to_string());
-            label.add_css_class("large-label");
+            label.add_css_class("font-label");
             vbox.append(label);
 
             var button_box = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 10) {
@@ -52,6 +66,7 @@ public class CounterApp : Gtk.Application {
 
 
             var add_button = new Gtk.Button.with_label("Increase by 1");
+            add_button.add_css_class("button-label");
             add_button.clicked.connect(() => {
                 counter++;
                 label.set_text(counter.to_string());
@@ -59,6 +74,7 @@ public class CounterApp : Gtk.Application {
             button_box.append(add_button);
 
             var reset_button = new Gtk.Button.with_label("Reset");
+            reset_button.add_css_class("button-label");
             reset_button.clicked.connect(() => {
                 counter = 0;
                 label.set_text(counter.to_string());
