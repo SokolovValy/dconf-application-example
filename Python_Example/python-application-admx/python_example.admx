@@ -27,11 +27,11 @@
 
 
   <policies>
-    <policy name="OrgExampleCounterPython" class="Machine"
+    <policy name="OrgExampleCounterPythonMachine" class="Machine"
         displayName="$(string.org-example-python-counter)"
         explainText="$(string.org-example-python-counter_help)"
         key="Software\BaseALT\Policies\gsettings"
-        presentation="$(presentation.OrgExampleCounterPython-pr)" >
+        presentation="$(presentation.OrgExampleCounterPythonMachine-pr)" >
       <parentCategory ref="system:Python_Application" />
       <supportedOn ref="system:SUPPORTED_Sisyphus" />
       <elements>
@@ -44,6 +44,18 @@
             <decimal value="0" />
           </falseValue>
         </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgExampleCounterPythonUser" class="User"
+        displayName="$(string.org-example-python-counter)"
+        explainText="$(string.org-example-python-counter_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgExampleCounterPythonUser-pr)" >
+      <parentCategory ref="system:Python_Application" />
+      <supportedOn ref="system:SUPPORTED_Sisyphus" />
+      <elements>
+        <decimal id="python-counter_setter" valueName="org.example.counter.python.counter-value" minValue="0" maxValue="10000" />
       </elements>
     </policy>
 

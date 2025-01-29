@@ -36,9 +36,12 @@
     </stringTable>
 
     <presentationTable>
-      <presentation id="OrgExampleCounterPython-pr">
+      <presentation id="OrgExampleCounterPythonMachine-pr">
         <decimalTextBox refId="python-counter_setter" defaultValue="0">Значение счётчика:</decimalTextBox>
         <checkBox refId="python-counter_blocker">Блокировать</checkBox>
+      </presentation>
+      <presentation id="OrgExampleCounterPythonUser-pr">
+        <decimalTextBox refId="python-counter_setter" defaultValue="0">Значение счётчика:</decimalTextBox>
       </presentation>
       <presentation id="OrgExampleCounterPythonSize-pr">
         <decimalTextBox refId="python-width_setter" defaultValue="300">Ширина окна:</decimalTextBox>
