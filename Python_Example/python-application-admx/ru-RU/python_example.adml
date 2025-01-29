@@ -53,11 +53,15 @@
         <decimalTextBox refId="python-width_setter" defaultValue="300">Ширина окна:</decimalTextBox>
         <decimalTextBox refId="python-height_setter" defaultValue="300">Высота окна:</decimalTextBox>
       </presentation>
-      <presentation id="OrgExampleCounterPythonPozition-pr">
+      <presentation id="OrgExampleCounterPythonPozitionMachine-pr">
         <decimalTextBox refId="python-window-x_setter" defaultValue="960">Положение по горизонтали:</decimalTextBox>
         <decimalTextBox refId="python-window-y_setter" defaultValue="540">Положение по вертикали:</decimalTextBox>
         <checkBox refId="python-window-x_blocker">Блокировать настройку положения по горизонтали</checkBox>
         <checkBox refId="python-window-y_blocker">Блокировать настройку положения по вертикали</checkBox>
+      </presentation>
+      <presentation id="OrgExampleCounterPythonPozitionUser-pr">
+        <decimalTextBox refId="python-window-x_setter" defaultValue="960">Положение по горизонтали:</decimalTextBox>
+        <decimalTextBox refId="python-window-y_setter" defaultValue="540">Положение по вертикали:</decimalTextBox>
       </presentation>
     </presentationTable>
   </resources>

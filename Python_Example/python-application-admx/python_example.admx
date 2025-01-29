@@ -101,11 +101,11 @@
       </elements>
     </policy>
 
-    <policy name="OrgExampleCounterPythonPozition" class="Machine"
+    <policy name="OrgExampleCounterPythonPozitionMachine" class="Machine"
         displayName="$(string.org-example-python-counter-pozition)"
         explainText="$(string.org-example-python-counter-pozition_help)"
         key="Software\BaseALT\Policies\gsettings"
-        presentation="$(presentation.OrgExampleCounterPythonPozition-pr)" >
+        presentation="$(presentation.OrgExampleCounterPythonPozitionMachine-pr)" >
       <parentCategory ref="system:Python_Application" />
       <supportedOn ref="system:SUPPORTED_Sisyphus" />
       <elements>
@@ -127,6 +127,19 @@
             <decimal value="0" />
           </falseValue>
         </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgExampleCounterPythonPozitionUser" class="User"
+        displayName="$(string.org-example-python-counter-pozition)"
+        explainText="$(string.org-example-python-counter-pozition_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgExampleCounterPythonPozitionUser-pr)" >
+      <parentCategory ref="system:Python_Application" />
+      <supportedOn ref="system:SUPPORTED_Sisyphus" />
+      <elements>
+        <decimal id="python-window-x_setter" valueName="org.example.counter.python.window-x" minValue="0" maxValue="1920" />
+        <decimal id="python-window-y_setter" valueName="org.example.counter.python.window-y" minValue="0" maxValue="1080" />
       </elements>
     </policy>
 
