@@ -27,16 +27,16 @@
 
 
   <policies>
-    <policy name="OrgExampleCounterQt" class="Both"
-        displayName="$(string.org-example-qt-counter)"
-        explainText="$(string.org-example-qt-counter_help)"
+    <policy name="OrgExampleCounterQt" class="Machine"
+        displayName="$(string.org-example-qt-counter-machine)"
+        explainText="$(string.org-example-qt-counter-machine_help)"
         key="org/altlinux/example/qt_application"
         presentation="$(presentation.OrgExampleCounterQt-pr)" >
       <parentCategory ref="system:Qt_Application" />
       <supportedOn ref="system:SUPPORTED_Sisyphus" />
       <elements>
         <decimal id="qt-counter_setter" valueName="count" minValue="0" maxValue="10000" />
-        <boolean id="qt-counter_blocker" key="lock/org/altlinux/example/qt_application" valueName="count">
+        <boolean id="qt-counter_blocker" key="Locks/org/altlinux/example/qt_application" valueName="count">
           <trueValue>
             <decimal value="1" />
           </trueValue>
@@ -45,7 +45,36 @@
           </falseValue>
         </boolean>
         <text id="qt-version_setter" valueName="version"/>
-        <boolean id="qt-version_blocker" key="lock/org/altlinux/example/qt_application" valueName="version">
+        <boolean id="qt-version_blocker" key="Locks/org/altlinux/example/qt_application" valueName="version">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgExampleCounterQt" class="User"
+        displayName="$(string.org-example-qt-counter-user)"
+        explainText="$(string.org-example-qt-counter-user_help)"
+        key="org/altlinux/example/qt_application"
+        presentation="$(presentation.OrgExampleCounterQt-pr)" >
+      <parentCategory ref="system:Qt_Application" />
+      <supportedOn ref="system:SUPPORTED_Sisyphus" />
+      <elements>
+        <decimal id="qt-counter_setter" valueName="count" minValue="0" maxValue="10000" />
+        <boolean id="qt-counter_blocker" key="Locks/org/altlinux/example/qt_application" valueName="count">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <text id="qt-version_setter" valueName="version"/>
+        <boolean id="qt-version_blocker" key="Locks/org/altlinux/example/qt_application" valueName="version">
           <trueValue>
             <decimal value="1" />
           </trueValue>
