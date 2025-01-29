@@ -59,11 +59,11 @@
       </elements>
     </policy>
 
-    <policy name="OrgExampleCounterPythonSize" class="Machine"
+    <policy name="OrgExampleCounterPythonSizeMachine" class="Machine"
         displayName="$(string.org-example-python-counter-size)"
         explainText="$(string.org-example-python-counter-size_help)"
         key="Software\BaseALT\Policies\gsettings"
-        presentation="$(presentation.OrgExampleCounterPythonSize-pr)" >
+        presentation="$(presentation.OrgExampleCounterPythonSizeMachine-pr)" >
       <parentCategory ref="system:Python_Application" />
       <supportedOn ref="system:SUPPORTED_Sisyphus" />
       <elements>
@@ -85,6 +85,19 @@
             <decimal value="0" />
           </falseValue>
         </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgExampleCounterPythonSizeUser" class="User"
+        displayName="$(string.org-example-python-counter-size)"
+        explainText="$(string.org-example-python-counter-size_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgExampleCounterPythonSizeUser-pr)" >
+      <parentCategory ref="system:Python_Application" />
+      <supportedOn ref="system:SUPPORTED_Sisyphus" />
+      <elements>
+        <decimal id="python-width_setter" valueName="org.example.counter.python.window-width" minValue="0" maxValue="800" />
+        <decimal id="python-height_setter" valueName="org.example.counter.python.window-height" minValue="0" maxValue="800" />
       </elements>
     </policy>
 

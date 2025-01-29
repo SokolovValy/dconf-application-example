@@ -43,11 +43,15 @@
       <presentation id="OrgExampleCounterPythonUser-pr">
         <decimalTextBox refId="python-counter_setter" defaultValue="0">Значение счётчика:</decimalTextBox>
       </presentation>
-      <presentation id="OrgExampleCounterPythonSize-pr">
+      <presentation id="OrgExampleCounterPythonSizeMachine-pr">
         <decimalTextBox refId="python-width_setter" defaultValue="300">Ширина окна:</decimalTextBox>
         <decimalTextBox refId="python-height_setter" defaultValue="300">Высота окна:</decimalTextBox>
         <checkBox refId="python-width_blocker">Блокировать настройку ширины</checkBox>
         <checkBox refId="python-height_blocker">Блокировать настройку высоты</checkBox>
+      </presentation>
+      <presentation id="OrgExampleCounterPythonSizeUser-pr">
+        <decimalTextBox refId="python-width_setter" defaultValue="300">Ширина окна:</decimalTextBox>
+        <decimalTextBox refId="python-height_setter" defaultValue="300">Высота окна:</decimalTextBox>
       </presentation>
       <presentation id="OrgExampleCounterPythonPozition-pr">
         <decimalTextBox refId="python-window-x_setter" defaultValue="960">Положение по горизонтали:</decimalTextBox>
