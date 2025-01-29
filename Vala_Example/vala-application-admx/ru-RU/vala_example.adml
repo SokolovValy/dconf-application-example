@@ -29,9 +29,12 @@
     </stringTable>
 
     <presentationTable>
-      <presentation id="OrgExampleCounterVala-pr">
+      <presentation id="OrgExampleCounterValaMachine-pr">
         <decimalTextBox refId="vala-counter_setter" defaultValue="0">Значение счётчика:</decimalTextBox>
         <checkBox refId="vala-counter_blocker">Блокировать</checkBox>
+      </presentation>
+      <presentation id="OrgExampleCounterValaUser-pr">
+        <decimalTextBox refId="vala-counter_setter" defaultValue="0">Значение счётчика:</decimalTextBox>
       </presentation>
       <presentation id="OrgExampleCounterValaSize-pr">
         <decimalTextBox refId="vala-width_setter" defaultValue="300">Ширина окна:</decimalTextBox>

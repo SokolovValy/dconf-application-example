@@ -31,7 +31,7 @@
         displayName="$(string.org-example-vala-counter)"
         explainText="$(string.org-example-vala-counter_help)"
         key="Software\BaseALT\Policies\gsettings"
-        presentation="$(presentation.OrgExampleCounterVala-pr)" >
+        presentation="$(presentation.OrgExampleCounterValaMachine-pr)" >
       <parentCategory ref="system:Vala_Application" />
       <supportedOn ref="system:SUPPORTED_Sisyphus" />
       <elements>
@@ -44,6 +44,18 @@
             <decimal value="0" />
           </falseValue>
         </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgExampleCounterVala" class="User"
+        displayName="$(string.org-example-vala-counter)"
+        explainText="$(string.org-example-vala-counter_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgExampleCounterValaUser-pr)" >
+      <parentCategory ref="system:Vala_Application" />
+      <supportedOn ref="system:SUPPORTED_Sisyphus" />
+      <elements>
+        <decimal id="vala-counter_setter" valueName="org.example.counter.vala.counter-value" minValue="0" maxValue="10000" />
       </elements>
     </policy>
 
