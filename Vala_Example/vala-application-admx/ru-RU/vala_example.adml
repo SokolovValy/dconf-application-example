@@ -42,6 +42,10 @@
         <checkBox refId="vala-width_blocker">Блокировать настройку ширины</checkBox>
         <checkBox refId="vala-height_blocker">Блокировать настройку высоты</checkBox>
       </presentation>
+      <presentation id="OrgExampleCounterValaUser-pr">
+        <decimalTextBox refId="vala-width_setter" defaultValue="300">Ширина окна:</decimalTextBox>
+        <decimalTextBox refId="vala-height_setter" defaultValue="300">Высота окна:</decimalTextBox>
+      </presentation>
     </presentationTable>
   </resources>
 </policyDefinitionResources>

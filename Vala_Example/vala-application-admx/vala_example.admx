@@ -59,11 +59,11 @@
       </elements>
     </policy>
 
-    <policy name="OrgExampleCounterValaSize" class="Machine"
+    <policy name="OrgExampleCounterValaSizeMachine" class="Machine"
         displayName="$(string.org-example-vala-counter-size)"
         explainText="$(string.org-example-vala-counter-size_help)"
         key="Software\BaseALT\Policies\gsettings"
-        presentation="$(presentation.OrgExampleCounterValaSize-pr)" >
+        presentation="$(presentation.OrgExampleCounterValaSizeMachine-pr)" >
       <parentCategory ref="system:Vala_Application" />
       <supportedOn ref="system:SUPPORTED_Sisyphus" />
       <elements>
@@ -85,6 +85,19 @@
             <decimal value="0" />
           </falseValue>
         </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgExampleCounterValaSizeUser" class="User"
+        displayName="$(string.org-example-vala-counter-size)"
+        explainText="$(string.org-example-vala-counter-size_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgExampleCounterValaSizeUser-pr)" >
+      <parentCategory ref="system:Vala_Application" />
+      <supportedOn ref="system:SUPPORTED_Sisyphus" />
+      <elements>
+        <decimal id="vala-width_setter" valueName="org.example.counter.vala.window-width" minValue="0" maxValue="800" />
+        <decimal id="vala-height_setter" valueName="org.example.counter.vala.window-height" minValue="0" maxValue="800" />
       </elements>
     </policy>
 
